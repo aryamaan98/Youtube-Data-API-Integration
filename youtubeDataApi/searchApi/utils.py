@@ -63,3 +63,18 @@ def get_videos_details_for_keyword(search_keyword):
         for detail in videos_details
     ]
     return all_video_details
+
+
+def get_all_videos_details():
+    all_details = VideosDetail.objects.all().order_by('publish_datetime').reverse()
+    all_video_details = [
+        {
+            'youtube_video_id': detail.youtube_video_id,
+            'title': detail.title,
+            'description': detail.description,
+            'publish_datetime': detail.publish_datetime,
+            'thumbnail_url': detail.thumbnail_url
+        }
+        for detail in all_details
+    ]
+    return all_video_details

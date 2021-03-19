@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'searchApi.apps.SearchapiConfig',
+    'django_crontab',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +42,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'searchApi.apps.SearchapiConfig',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -120,7 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-YOUTUBE_SEARCH_API_KEY = 'AIzaSyD0jygfMFOoPlQAOZi4zKdZAQl7HQmFWMw'
+YOUTUBE_SEARCH_API_KEY = 'AIzaSyBNZgoAV6VxYswQsEtHXoFryeN_JlNxR9Q'
 
 CRONJOBS = [
     ('* * * * *', 'searchApi.cron.get_recent_youtube_videos_details', '>> Desktop/cron_job.log 2>&1')

@@ -1,6 +1,5 @@
 from django.conf import settings
 
-
 YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search'
 
 NUMBER_OF_RESPONSES = 10
@@ -16,3 +15,6 @@ params = {
     'order': 'date',
     'key': settings.YOUTUBE_SEARCH_API_KEY,
 }
+
+SIZE_OF_PAGE = 5
+STARTING_PAGE = 1
