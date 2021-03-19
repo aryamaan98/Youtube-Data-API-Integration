@@ -7,6 +7,9 @@ Also exposed two GET {/search and /videos-details} endpoints.
 ```
 
 ## Instructions
+```
+Add keys in youtubeDataApi/settings.py (YOUTUBE_SEARCH_API_KEYS).
+```
 
 ### Install Dependencies
 ```bash
@@ -33,6 +36,12 @@ Also exposed two GET {/search and /videos-details} endpoints.
 ### Run Server
 ```bash
 --- python manage.py runserver
+```
+
+### Docker
+```bash
+--- docker-compose build
+--- docker-compose up
 ```
 
 ### API Endpoints
