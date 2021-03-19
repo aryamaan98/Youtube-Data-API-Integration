@@ -1,6 +1,7 @@
 import requests
 import json
 from dateutil.parser import parse
+from django.db.models import Q
 from .models import VideosDetail
 from . import config
 
@@ -45,3 +46,20 @@ def _save_video_detils_in_db(videos_details):
     print('Response', response)
     print('Successfull saved in database !')
     return response
+
+
+def get_videos_details_for_keyword(search_keyword):
+    videos_details = VideosDetail.objects.filter(Q(title__icontains=search_keyword) | Q(
+        description__icontains=search_keyword)).order_by('publish_datetime').reverse()
+    print('Vidoes Details', videos_details)
+    all_video_details = [
+        {
+            'youtube_video_id': detail.youtube_video_id,
+            'title': detail.title,
+            'description': detail.description,
+            'publish_datetime': detail.publish_datetime,
+            'thumbnail_url': detail.thumbnail_url
+        }
+        for detail in videos_details
+    ]
+    return all_video_details
