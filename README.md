@@ -12,7 +12,6 @@ Also exposed two GET {/search and /videos-details} endpoints.
 ```bash
 --- pip install -r requirements.txt 
 ```
-(Some dependencies might not be included.Please install it manually.)
 
 ### Create and Apply Migrations
 ```bash
