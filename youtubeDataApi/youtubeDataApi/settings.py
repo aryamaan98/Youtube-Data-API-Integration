@@ -25,7 +25,7 @@ SECRET_KEY = 'q%xh8lftx49#60129)b%hzh!(1&w87$9trk^o4$ypigys=vpp-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1']
 
 
 # Application definition
@@ -121,7 +121,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-YOUTUBE_SEARCH_API_KEY = 'AIzaSyBNZgoAV6VxYswQsEtHXoFryeN_JlNxR9Q'
+YOUTUBE_SEARCH_API_KEYS = ['AIzaSyBNZgoAV6VxYswQsEtHXoFryeN_JlNxR9Q','AIzaSyCmce_f-hy555VJ2YAkWAMaaGpNiTWPguU']
+#entering these keys in databse via data migration
 
 CRONJOBS = [
     ('* * * * *', 'searchApi.cron.get_recent_youtube_videos_details', '>> Desktop/cron_job.log 2>&1')
