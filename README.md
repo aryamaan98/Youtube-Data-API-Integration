@@ -7,9 +7,8 @@ Also exposed two GET {/search and /videos-details} endpoints.
 ```
 
 ## Instructions
-```
-Add keys in youtubeDataApi/settings.py (YOUTUBE_SEARCH_API_KEYS).
-```
+
+#### Imp - Add keys in youtubeDataApi/settings.py (YOUTUBE_SEARCH_API_KEYS) before starting project.
 
 ### Install Dependencies
 ```bash
